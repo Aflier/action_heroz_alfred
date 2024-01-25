@@ -11,6 +11,8 @@ module ActionHerozAlfred
         # Views
         template "app/views/_action_heroz_button.html.erb", "app/views/action_heroz_alfred/_action_heroz_button.html.erb"
         template "app/views/_action_heroz_slide.html.erb", "app/views/action_heroz_alfred/_action_heroz_slide.html.erb"
+        # Config
+        template "config/initializers/action_heroz.rb", "config/initializers/action_heroz.rb"
       end
     end
   end
