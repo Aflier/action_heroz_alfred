@@ -9,8 +9,9 @@ module ActionHerozAlfred
         # Controller concern
         template "app/controllers/concerns/action_help_control.rb", "app/controllers/concerns/action_help_control.rb"
         # Views
-        template "app/views/_action_heroz_button.html.erb", "app/views/action_heroz_alfred/_action_heroz_button.html.erb"
-        template "app/views/_action_heroz_slide.html.erb", "app/views/action_heroz_alfred/_action_heroz_slide.html.erb"
+        template "app/views/action_heroz_alfred/_action_heroz_button.html.erb", "app/views/action_heroz_alfred/_action_heroz_button.html.erb"
+        template "app/views/action_heroz_alfred/_action_heroz_slide.html.erb", "app/views/action_heroz_alfred/_action_heroz_slide.html.erb"
+        template "app/views/users/slider.turbo_stream.erb", "app/views/users/slider.turbo_stream.erb"
         # Config
         template "config/initializers/action_heroz.rb", "config/initializers/action_heroz.rb"
       end
