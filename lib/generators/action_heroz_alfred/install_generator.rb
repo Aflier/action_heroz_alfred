@@ -4,7 +4,6 @@ module ActionHerozAlfred
       source_root File.expand_path("../templates", __FILE__)
 
       def create_initializer_file
-        #        template "turbo_controller.js", "app/javascript/controllers/turbo_controller.js"
         # template "position_control.rb", "app/controllers/concerns/position_control.rb"
 
         # template "assets/stylesheets/layout.scss", "app/assets/stylesheets/layout.scss"
@@ -17,11 +16,9 @@ module ActionHerozAlfred
         # template "views/stimulus/filters/_filter_radio.html.erb", "app/views/stimulus/filters/_filter_radio.html.erb"
         # template "views/stimulus/filters/_filter_toggle.html.erb", "app/views/stimulus/filters/_filter_toggle.html.erb"
 
+        template "javascript/controllers/help_slider_controller.js", "app/javascript/controllers/help_slider_controller.js"
         template "app/views/_action_heroz_button.html.erb", "app/views/action_heroz_alfred/_action_heroz_button.html.erb"
         template "app/views/_action_heroz_slide.html.erb", "app/views/action_heroz_alfred/_action_heroz_slide.html.erb"
-
-
-        # copy_file File.expand_path("../../../../app/javascript/bootstrap_costumes/controllers/turbo_controller.js", __FILE__), "app/javascript/controllers/turbo_controller.js"
       end
     end
   end
