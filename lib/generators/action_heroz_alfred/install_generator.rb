@@ -6,6 +6,7 @@ module ActionHerozAlfred
       def create_initializer_file
         # Stimulus Controller
         template "app/javascript/controllers/help_slider_controller.js", "app/javascript/controllers/help_slider_controller.js"
+        template "app/javascript/controllers/off_canvas_controller.js", "app/javascript/controllers/off_canvas_controller_controller.js"
         # Controller concern
         template "app/controllers/concerns/action_help_control.rb", "app/controllers/concerns/action_help_control.rb"
         # Views
