@@ -4,7 +4,11 @@ module ActionHerozAlfred
       source_root File.expand_path("../templates", __FILE__)
 
       def create_initializer_file
+        # Stimulus Controller
         template "app/javascript/controllers/help_slider_controller.js", "app/javascript/controllers/help_slider_controller.js"
+        # Controller concern
+        template "app/controllers/concerns/action_help_controller", "app/controllers/concerns/action_help_controller"
+        # Views
         template "app/views/_action_heroz_button.html.erb", "app/views/action_heroz_alfred/_action_heroz_button.html.erb"
         template "app/views/_action_heroz_slide.html.erb", "app/views/action_heroz_alfred/_action_heroz_slide.html.erb"
       end
