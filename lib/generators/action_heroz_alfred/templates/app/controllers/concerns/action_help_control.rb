@@ -1,3 +1,12 @@
+# Routes: Something like the following needs to be in your routes. Assumes you add to UserController
+#
+# resources :users, only: [:xxx, :slider] do
+#   member do
+#     get :xxx
+#     get :slider
+#   end
+# end
+
 module ActionHelpControl
   extend ActiveSupport::Concern
 
