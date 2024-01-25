@@ -7,7 +7,7 @@ module ActionHerozAlfred
         # Stimulus Controller
         template "app/javascript/controllers/help_slider_controller.js", "app/javascript/controllers/help_slider_controller.js"
         # Controller concern
-        template "app/controllers/concerns/action_help_controller", "app/controllers/concerns/action_help_controller"
+        template "app/controllers/concerns/action_help_controller.rb", "app/controllers/concerns/action_help_controller.rb"
         # Views
         template "app/views/_action_heroz_button.html.erb", "app/views/action_heroz_alfred/_action_heroz_button.html.erb"
         template "app/views/_action_heroz_slide.html.erb", "app/views/action_heroz_alfred/_action_heroz_slide.html.erb"
