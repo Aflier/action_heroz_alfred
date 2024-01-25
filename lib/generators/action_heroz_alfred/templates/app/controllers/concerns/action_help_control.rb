@@ -15,5 +15,8 @@ module ActionHelpControl
     @action_name = params[:action_name]
     @tab = params[:tab]
     @page_ident = "#{@controller_name}-#{@action_name}#{ @tab.blank? ? '': "-t-#{@tab}"}"
+    @uuid_ticket = current_user.get_heroz_key(params[:key_home_id])
+
   end
+
 end
