@@ -1,39 +1,51 @@
 # ActionHerozAlfred
 
-TODO: Delete this and the text below, and describe your gem
+# Gemfile
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/action_heroz_alfred`. To experiment with that code, run `bin/console` for an interactive prompt.
+    gem 'action_heroz_alfred', git: 'https://github.com/Aflier/action_heroz_alfred.git', branch: 'main'
 
-## Installation
+# Install
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+    rails g action_heroz_alfred:install
 
-Install the gem and add to the application's Gemfile by executing:
+For now also run the above everytime you update.
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+# Add the controller
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+Add in the controller. It needs to be include the button and the turbo tag for the Slider!
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    <body data-controller="help-slider">...</body>
 
-## Usage
+# Add the button
 
-TODO: Write usage instructions here
+Add the button to where you want it to be. 
 
-## Development
+    <%= render '/action_heroz_alfred/action_heroz_button' %>
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Add the following everywhere you would like to be able to trigger the slider if clicked on:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+    <div data-action="click->help-slider#slider">Here...</div>
 
-## Contributing
+# Add the slider
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/action_heroz_alfred. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/action_heroz_alfred/blob/master/CODE_OF_CONDUCT.md).
+Add the follower to all your layouts files where you want the slider to show.
 
-## License
+    <%= turbo_frame_tag :help_slider %>
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+# Keys to the door
 
-## Code of Conduct
+Complete the config file at config/initializers/action_heroz.rb
 
-Everyone interacting in the ActionHerozAlfred project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/action_heroz_alfred/blob/master/CODE_OF_CONDUCT.md).
+    if Rails.env.production? # or true
+        $base_url = 'https://action.heroz.app'
+        $action_heroz_key = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+        $action_heroz_pages_key = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+    else
+        # For you for some testing! 
+        $base_url = 'http://localhost:3002'
+        $action_heroz_key = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+        $action_heroz_pages_key = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+    end
+
+There is a separate key for raising actions ($action_heroz_key) and for help pages ($action_heroz_pages_key).
+They can be the same.
